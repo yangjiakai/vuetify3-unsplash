@@ -3,18 +3,18 @@
 </p>
 
 <h6 align='center'>
-<a href="https://marvelous-sunflower-cb8d70.netlify.app/">在线 Demo</a>
+<a href="https://unsplash.vuetify3.com/">在线 Demo</a>
 </h6>
 
 <br>
 
 <p align='center'>
-<a href="https://github.com/yangjiakai/vuetify3-base/blob/master/README.md">English</a> | <b>简体中文</b>| <a href="https://github.com/yangjiakai/vuetify3-base/blob/master/README.jp.md">日本語</a>
+<a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/master/README.md">English</a> | <b>简体中文</b>| <a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/master/README.jp.md">日本語</a>
 </p>
 
 ## 序文
 
-这是一个使用 vuetify3 + 组合式 api,整合了常用功能和插件的开发模板,之后的 vuetify3 app 都可以基于这个模板进行开发
+模仿 Unsplash 官网开发 的全平台图库 app，调用的全是 Unsplash 官方的接口
 
 ## 特性
 
@@ -49,9 +49,9 @@
 ## 现在可以试试!
 
 ```
-https://github.com/yangjiakai/vuetify3-base.git
+https://github.com/yangjiakai/vuetify3-unsplash.git
 
-cd vuetify3-base
+cd vuetify3-unsplash
 
 npm install
 

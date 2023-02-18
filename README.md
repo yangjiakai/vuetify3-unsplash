@@ -3,18 +3,18 @@
 </p>
 
 <h6 align='center'>
-<a href="https://marvelous-sunflower-cb8d70.netlify.app/">Live Demo</a>
+<a href="https://unsplash.vuetify3.com/">Live Demo</a>
 </h6>
 
 <br>
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/yangjiakai/vuetify3-base/blob/master/README.zh-CN.md">简体中文</a>| <a href="https://github.com/yangjiakai/vuetify3-base/blob/master/README.jp.md">日本語</a>
+<b>English</b> | <a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/master/README.zh-CN.md">简体中文</a>| <a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/master/README.jp.md">日本語</a>
 </p>
 
 ## Introduction
 
-This is a development template that integrates frequently used features and plugins using vuetify3 + composite APIs. Future vuetify3 apps can be developed based on this template.
+Developing a full-platform gallery app that imitates the Unsplash website, all API calls are made to the official Unsplash API.
 
 ## Features
 
@@ -38,9 +38,9 @@ This is a development template that integrates frequently used features and plug
 ## Try it now!
 
 ```
-https://github.com/yangjiakai/vuetify3-base.git
+https://github.com/yangjiakai/vuetify3-unsplash.git
 
-cd vuetify3-base
+cd vuetify3-unsplash
 
 npm install
 

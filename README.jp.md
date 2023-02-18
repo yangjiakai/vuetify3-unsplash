@@ -3,18 +3,18 @@
 </p>
 
 <h6 align='center'>
-<a href="https://marvelous-sunflower-cb8d70.netlify.app/">ライブ・デモ</a>
+<a href="https://unsplash.vuetify3.com/">ライブ・デモ</a>
 </h6>
 
 <br>
 
 <p align='center'>
-<a href="https://github.com/yangjiakai/vuetify3-base/blob/main/README.md">English</a> | <a href="https://github.com/yangjiakai/vuetify3-base/blob/main/README.zh-CN.md">简体中文</a>| <b >日本語</b>
+<a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/main/README.md">English</a> | <a href="https://github.com/yangjiakai/vuetify3-unsplash/blob/main/README.zh-CN.md">简体中文</a>| <b >日本語</b>
 </p>
 
 ## 序文
 
-これは、vuetify3 + composition api を使用して、一般的な機能やプラグインを統合した開発テンプレートです。このテンプレートを基に、今後の vuetify3 アプリの開発ができます。
+Unsplash のウェブサイトを模倣したフルプラットフォームのギャラリーアプリを開発し、すべての API 呼び出しは公式の Unsplash API に行われています。
 
 ## 特徴
 
@@ -39,9 +39,9 @@
 ## 今すぐ試す!
 
 ```
-git clone https://github.com/yangjiakai/vuetify3-base.git
+git clone https://github.com/yangjiakai/vuetify3-unsplash.git
 
-cd vuetify3-base
+cd vuetify3-unsplash
 
 npm install
 
