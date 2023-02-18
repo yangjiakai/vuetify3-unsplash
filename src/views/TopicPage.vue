@@ -1,40 +1,58 @@
 <!--
 * @Component: 
 * @Maintainer: J.K. Yang
-* @Description: Imitate Nitori App
+* @Description: Topic Page 
 -->
 <script setup lang="ts">
-import { getRandomPhotoApi, getPhotosApi } from "@/api/unsplashApi";
+import {
+  getTopicsApi,
+  getTopicApi,
+  getTopicPhotosApi,
+} from "@/api/unsplashApi";
 import type { Topic, Photo } from "@/types/unsplashTypes";
 import PhotoCard from "@/components/PhotoCard.vue";
 import TopicsBar from "@/components/TopicsBar.vue";
 
-const banner = ref<Photo>();
-const photos = ref<Photo[]>([]);
+const route = useRoute();
+
+const topics = ref<Topic[]>([]);
+const banner = ref<Topic>();
+const topicPhotos = ref<Photo[]>([]);
+const slug = ref<string | string[]>(route.params.slug);
 
 const initData = async () => {
-  const photosResponse = await getPhotosApi();
-  photos.value = photosResponse.data;
+  const topicsResponse = await getTopicsApi();
+  topics.value = topicsResponse.data;
 
-  const bannerResponse = await getRandomPhotoApi();
+  const photosResponse = await getTopicPhotosApi(slug.value);
+  topicPhotos.value = photosResponse.data;
+
+  const bannerResponse = await getTopicApi(slug.value);
   banner.value = bannerResponse.data;
+
+  console.log(banner.value);
 };
 
 initData();
 </script>
 
 <template>
-  <div>
+  <div class="">
     <TopicsBar />
-    <v-parallax v-if="banner" height="800" :src="banner.urls.full" class="">
+    <v-parallax
+      v-if="banner"
+      height="800"
+      :src="banner.cover_photo.urls.full"
+      class=""
+    >
       <v-sheet
-        color="rgba(100,100,100,.3)"
+        color="rgba(0,0,0,.3)"
         class="d-flex flex-column fill-height justify-center align-center text-white"
       >
         <v-card width="800" elevation="0" color="transparent">
-          <h1 class="text-h2 font-weight-black mb-4">Unsplash</h1>
+          <h1 class="text-h2 font-weight-black mb-4">{{ banner.title }}</h1>
           <h4 class="subheading">
-            The internet’s source for visuals. Powered by creators everywhere.
+            {{ banner.description }}
           </h4>
         </v-card>
       </v-sheet>
@@ -42,7 +60,7 @@ initData();
     <v-sheet
       class="mx-auto my-5 pa-5"
       max-width="1600"
-      v-if="photos.length > 0"
+      v-if="topicPhotos.length > 0"
       min-height="80vh"
     >
       <v-row justify="center">
@@ -51,7 +69,7 @@ initData();
           sm="6"
           md="4"
           lg="3"
-          v-for="photo in photos"
+          v-for="photo in topicPhotos"
           :key="photo.id"
         >
           <PhotoCard :photo="photo"></PhotoCard>
