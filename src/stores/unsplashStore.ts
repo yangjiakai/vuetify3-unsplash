@@ -13,6 +13,7 @@ export const useUnsplashStore = defineStore({
       timeout: 1000,
       text: "",
     }),
+    showSideBar: ref(false),
   }),
 
   persist: {

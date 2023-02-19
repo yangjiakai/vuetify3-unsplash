@@ -257,7 +257,7 @@ const openPhotoDialog = (id: string) => {
       <v-btn color="">Go</v-btn>
     </v-toolbar> -->
     <v-row class="pa-3">
-      <v-col cols="12" xl="10">
+      <v-col cols="12">
         <v-card class="mt-2">
           <v-tabs v-model="tab" bg-color="primary">
             <v-tab value="photos"
@@ -558,9 +558,6 @@ const openPhotoDialog = (id: string) => {
             </v-window>
           </v-card-text>
         </v-card>
-      </v-col>
-      <v-col cols="0" xl="2">
-        <FavoriteCard />
       </v-col>
     </v-row>
 

@@ -15,18 +15,17 @@ const removePhoto = (photo: Photo) => {
 </script>
 
 <template>
-  <v-card class="mt-2 my-favorite" height="80vh">
-    <v-toolbar class="pl-5" density="compact" color="primary">
+  <v-card class="my-favorite">
+    <v-toolbar height="64" class="pl-5" color="primary">
       <span> My favorite </span>
       <v-spacer />
       <v-btn icon variant="text">
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-toolbar>
-
-    <div
+    <perfect-scrollbar
       v-if="unsplashStore.favoriteList.length > 0"
-      class="favorite-container pa-3"
+      class="favorate-container pa-3"
     >
       <transition-group name="fade" class="">
         <!-- <v-card
@@ -56,16 +55,15 @@ const removePhoto = (photo: Photo) => {
           </div>
         </v-card>
       </transition-group>
-    </div>
+    </perfect-scrollbar>
 
     <!-- <v-btn color="error" @click="deleteItem">delete</v-btn> -->
   </v-card>
 </template>
 
 <style scoped lang="scss">
-.favorite-container {
-  overflow-y: scroll;
-  height: 100%;
+.favorate-container {
+  height: calc(100vh - 128px);
 }
 
 .favorite-card {

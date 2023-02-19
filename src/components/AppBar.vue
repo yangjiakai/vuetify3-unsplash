@@ -6,6 +6,8 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import SearchInput from "@/components/SearchInput.vue";
+import { useUnsplashStore } from "../stores/unsplashStore";
+const unsplashStore = useUnsplashStore();
 </script>
 
 <template>
@@ -18,7 +20,10 @@ import SearchInput from "@/components/SearchInput.vue";
       <RouterLink to="/"> Unsplash </RouterLink>
     </v-toolbar-title>
     <template v-slot:append>
-      <v-btn icon="mdi-dots-vertical"></v-btn>
+      <v-btn
+        icon="mdi-dots-vertical"
+        @click="unsplashStore.showSideBar = !unsplashStore.showSideBar"
+      ></v-btn>
     </template>
     <SearchInput />
     <v-spacer></v-spacer>

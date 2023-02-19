@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import AppBar from "@/components/AppBar.vue";
 import { useUnsplashStore } from "@/stores/unsplashStore";
+import Sidebar from "@/components/Sidebar.vue";
 const unsplashStore = useUnsplashStore();
 </script>
 
 <template>
   <v-app id="app">
+    <!-- ---------------------------------------------- -->
+    <!---Snackbar -->
+    <!-- ---------------------------------------------- -->
     <v-snackbar
       v-model="unsplashStore.snackbar.isShow"
       :timeout="unsplashStore.snackbar.timeout"
@@ -21,7 +25,13 @@ const unsplashStore = useUnsplashStore();
         </v-btn>
       </template>
     </v-snackbar>
+    <!-- ---------------------------------------------- -->
+    <!---AppBar -->
+    <!-- ---------------------------------------------- -->
     <AppBar />
+    <!-- ---------------------------------------------- -->
+    <!---Main -->
+    <!-- ---------------------------------------------- -->
     <v-main>
       <router-view v-slot="{ Component }">
         <!-- <transition name="fade">
@@ -32,6 +42,10 @@ const unsplashStore = useUnsplashStore();
         </transition>
       </router-view>
     </v-main>
+    <!-- ---------------------------------------------- -->
+    <!---Sidebar -->
+    <!-- ---------------------------------------------- -->
+    <Sidebar />
   </v-app>
 </template>
 

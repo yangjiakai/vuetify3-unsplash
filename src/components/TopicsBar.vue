@@ -36,16 +36,6 @@ initData();
         </v-chip>
       </v-hover>
     </template>
-
-    <RouterLink
-      :to="{
-        name: 'unsplash-topic',
-        params: { id: topic.id },
-      }"
-      v-for="topic in topics"
-      :key="topic.id"
-      >{{ topic.title }}
-    </RouterLink>
   </v-sheet>
 </template>
 
