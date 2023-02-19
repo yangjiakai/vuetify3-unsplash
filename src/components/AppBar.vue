@@ -10,10 +10,13 @@ import SearchInput from "@/components/SearchInput.vue";
 
 <template>
   <v-app-bar elevation="1">
-    <template v-slot:prepend>
+    <!-- <template v-slot:prepend>
       <Icon class="mx-3" width="30" icon="logos:bubble-icon" />
-    </template>
-    <v-toolbar-title>Unsplash</v-toolbar-title>
+    </template> -->
+
+    <v-toolbar-title class="font-weight-bold ml-10">
+      <RouterLink to="/"> Unsplash </RouterLink>
+    </v-toolbar-title>
     <template v-slot:append>
       <v-btn icon="mdi-dots-vertical"></v-btn>
     </template>

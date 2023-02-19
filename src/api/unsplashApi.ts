@@ -1,8 +1,6 @@
 // change the access key to your own
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
-console.log(ACCESS_KEY);
-
 const instance = axios.create({
   baseURL: "https://api.unsplash.com",
   timeout: 1000,
@@ -123,20 +121,20 @@ export const getCollectionRelatedApi = (id: string | string[]) => {
 // Search
 // Search All
 export const searchAllApi = (query?: Query) => {
-  return axios.get("/search", { params: query });
+  return instance.get("/search", { params: query });
 };
 
 // Search photos
 export const searchPhotosApi = (query?: Query) => {
-  return axios.get("/search/photos", { params: query });
+  return instance.get("/search/photos", { params: query });
 };
 
 // Search collections
 export const searchCollectionsApi = (query?: Query) => {
-  return axios.get("/search/collections", { params: query });
+  return instance.get("/search/collections", { params: query });
 };
 
 // Search users
 export const searchUsersApi = (query?: Query) => {
-  return axios.get("/search/users", { params: query });
+  return instance.get("/search/users", { params: query });
 };

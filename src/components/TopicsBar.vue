@@ -26,7 +26,7 @@ initData();
           class="mr-2"
           pill
           link
-          :to="`topic/${topic.slug}`"
+          :to="`/topic/${topic.slug}`"
         >
           <v-avatar start>
             <v-img cover :src="topic.cover_photo.urls.thumb"></v-img>
