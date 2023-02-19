@@ -36,8 +36,6 @@ const initData = async () => {
 
   const bannerResponse = await getTopicApi(slug.value);
   banner.value = bannerResponse.data;
-
-  console.log(banner.value);
 };
 
 initData();

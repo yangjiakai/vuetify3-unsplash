@@ -23,17 +23,23 @@ const userPhotosData = ref<Photo[]>([]);
 const userLikesData = ref<Photo[]>([]);
 const userCollectionsData = ref<Collection[]>([]);
 const tab = ref(null);
-
 const isLoading = ref(false);
+const username = ref<string | string[]>(route.params.username);
+watch(
+  // watch for route changes
+  () => route.params.username,
+  (newUsername) => {
+    username.value = newUsername;
+    initData();
+  }
+);
 
 const initData = async () => {
   isLoading.value = true;
-  const userProfileResponse = await getUserApi(route.params.username);
-  const userPhotosResponse = await getUserPhotosApi(route.params.username);
-  const userLikesResponse = await getUserLikesApi(route.params.username);
-  const userCollectionsResponse = await getUserCollectionsApi(
-    route.params.username
-  );
+  const userProfileResponse = await getUserApi(username.value);
+  const userPhotosResponse = await getUserPhotosApi(username.value);
+  const userLikesResponse = await getUserLikesApi(username.value);
+  const userCollectionsResponse = await getUserCollectionsApi(username.value);
   userPhotosData.value = userPhotosResponse.data;
   userProfileData.value = userProfileResponse.data;
   userLikesData.value = userLikesResponse.data;
