@@ -18,15 +18,25 @@ const isLoading = ref(false);
 const collectionData = ref<Collection>();
 const collectionPhotosData = ref<Photo[]>([]);
 const collectionRelatedData = ref<Collection[]>([]);
+const collectionId = ref<string | string[]>(route.params.id);
+
+watch(
+  // watch for route changes
+  () => route.params.id,
+  (newId) => {
+    collectionId.value = newId;
+    initData();
+  }
+);
 
 const initData = async () => {
   isLoading.value = true;
-  const collectionResponse = await getCollectionApi(route.params.id);
+  const collectionResponse = await getCollectionApi(collectionId.value);
   const collectionPhotosResponse = await getCollectionPhotosApi(
-    route.params.id
+    collectionId.value
   );
   const collectionSimilarResponse = await getCollectionRelatedApi(
-    route.params.id
+    collectionId.value
   );
 
   collectionData.value = collectionResponse.data;
