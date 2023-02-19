@@ -48,6 +48,12 @@ const photoDetailModal = ref(false);
 const openDetailModal = () => {
   photoDetailModal.value = true;
 };
+
+const addToCollection = () => {
+  // unsplashStore.addToCollection(props.photo);
+  // snackbar.text = "Added to your collection";
+  // snackbar.isShow = true;
+};
 </script>
 
 <template>
@@ -64,7 +70,7 @@ const openDetailModal = () => {
           <div class="card-top">
             <v-spacer />
 
-            <v-btn icon variant="text" @click="toggleLike(photo)">
+            <v-btn icon variant="text" @click.stop="toggleLike(photo)">
               <v-icon
                 v-if="photo.liked_by_user"
                 color="pink"
@@ -81,7 +87,12 @@ const openDetailModal = () => {
             </v-btn>
             <v-tooltip location="bottom" text="Add To Collection">
               <template #activator="{ props }">
-                <v-btn variant="text" v-bind="props" icon="mdi-plus" />
+                <v-btn
+                  @click.stop="addToCollection"
+                  variant="text"
+                  v-bind="props"
+                  icon="mdi-plus"
+                />
               </template>
             </v-tooltip>
           </div>
@@ -106,7 +117,7 @@ const openDetailModal = () => {
                   variant="text"
                   v-bind="props"
                   icon="mdi-download"
-                  @click="downloadPhoto(photo)"
+                  @click.stop="downloadPhoto(photo)"
                 />
               </template>
             </v-tooltip>
