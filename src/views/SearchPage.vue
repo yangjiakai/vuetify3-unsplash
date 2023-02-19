@@ -7,6 +7,8 @@
 import FavoriteCard from "@/components/FavoriteCard.vue";
 import PhotoDetail from "./PhotoDetailModal.vue";
 import UserCard from "@/components/UserCard.vue";
+import CollectionCard from "@/components/CollectionCard.vue";
+import moment from "moment";
 import {
   searchAllApi,
   searchPhotosApi,
@@ -243,19 +245,6 @@ const openPhotoDialog = (id: string) => {
 
 <template>
   <div class="photo-page">
-    <!-- <v-toolbar color="primary">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-text-field
-        v-model="searchParams.query"
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        single-line
-        placeholder="Search photos"
-        @keyup.enter="search"
-      ></v-text-field>
-      <v-spacer></v-spacer>
-      <v-btn color="">Go</v-btn>
-    </v-toolbar> -->
     <v-row class="pa-3">
       <v-col cols="12">
         <v-card class="mt-2">
@@ -347,14 +336,19 @@ const openPhotoDialog = (id: string) => {
                               </v-row>
                             </template>
                             <v-card-title class="card-title">
-                              <v-avatar size="avatarSize" class="mr-2">
-                                <img
-                                  :src="item.user.profile_image.small"
-                                  alt="alt"
-                                />
-                              </v-avatar>
-                              {{ item.user.username }}</v-card-title
-                            >
+                              <RouterLink
+                                class="text-white"
+                                :to="`/user/${item.user.username}`"
+                              >
+                                <v-avatar size="avatarSize" class="mr-2">
+                                  <img
+                                    :src="item.user.profile_image.small"
+                                    alt="alt"
+                                  />
+                                </v-avatar>
+                                {{ item.user.username }}
+                              </RouterLink>
+                            </v-card-title>
                           </v-img>
                         </div>
 
@@ -457,59 +451,15 @@ const openPhotoDialog = (id: string) => {
                   <v-row>
                     <v-col
                       cols="12"
-                      lg="6"
-                      xl="4"
-                      v-for="item in collectionData.collections"
-                      :key="item.id"
+                      sm="6"
+                      lg="4"
+                      v-for="collection in collectionData.collections"
+                      :key="collection.id"
                     >
-                      <v-card
-                        class="info-card collection-card d-flex mt-5"
-                        color="secondary-lighten-1"
-                      >
-                        <v-img
-                          max-width="200"
-                          aspect-ratio="1"
-                          cover
-                          :src="item.cover_photo.urls.small"
-                          :lazy-src="item.cover_photo.urls.small"
-                          @click="
-                            router.push({
-                              name: 'unsplash-collection',
-                              params: {
-                                id: item.id,
-                              },
-                            })
-                          "
-                        >
-                        </v-img>
-
-                        <div class="pa-2 flex-1">
-                          <v-card-title>
-                            {{ item.title }}
-                          </v-card-title>
-                          <v-card-subtitle class="pt-4">
-                            <v-avatar size="avatarSize">
-                              <img
-                                :src="item.user.profile_image.small"
-                                alt="alt"
-                              />
-                            </v-avatar>
-                            {{ item.user.username }}
-                          </v-card-subtitle>
-                          <v-card-text>
-                            <div>{{ item.description }}</div>
-                          </v-card-text>
-                          <v-card-actions>
-                            <span>{{ item.published_at }}</span>
-                            <v-spacer></v-spacer>
-                            <span class="text-accent">{{
-                              item.total_photos
-                            }}</span>
-                          </v-card-actions>
-                        </div>
-                      </v-card>
+                      <CollectionCard :collection="collection"></CollectionCard>
                     </v-col>
                   </v-row>
+
                   <v-btn
                     color=""
                     class="gradient info mt-5"

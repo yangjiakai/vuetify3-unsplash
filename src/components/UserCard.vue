@@ -33,7 +33,7 @@ const snackbar = reactive({
           <h5>{{ user.name }}</h5>
           <h5>{{ user.username }}</h5>
         </div>
-        <v-tooltip location="bottom" text="Add To Collection">
+        <v-tooltip location="bottom" text="Follow">
           <template v-slot:activator="{ props }">
             <v-btn v-bind="props" icon="mdi-plus"> </v-btn>
           </template>

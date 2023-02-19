@@ -15,7 +15,7 @@ const removePhoto = (photo: Photo) => {
 </script>
 
 <template>
-  <v-card class="my-favorite">
+  <v-card class="favorate-card">
     <v-toolbar height="64" class="pl-5" color="primary">
       <span> My favorite </span>
       <v-spacer />
