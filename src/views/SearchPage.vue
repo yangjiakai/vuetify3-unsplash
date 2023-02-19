@@ -7,6 +7,7 @@
 import FavoriteCard from "@/components/FavoriteCard.vue";
 import PhotoDetail from "./PhotoDetailModal.vue";
 import UserCard from "@/components/UserCard.vue";
+import PhotoCard from "@/components/PhotoCard.vue";
 import CollectionCard from "@/components/CollectionCard.vue";
 import moment from "moment";
 import {
@@ -299,111 +300,17 @@ const openPhotoDialog = (id: string) => {
                       </v-slide-group-item>
                     </v-slide-group>
                   </v-row>
+
                   <v-row>
                     <v-col
                       cols="12"
-                      xl="2"
-                      lg="3"
-                      md="4"
                       sm="6"
-                      v-for="item in photoData.photos"
-                      :key="item.id"
+                      md="4"
+                      lg="3"
+                      v-for="photo in photoData.photos"
+                      :key="photo.id"
                     >
-                      <v-card
-                        width="100%"
-                        class="info-card photo-card d-flex flex-column"
-                        height="480"
-                      >
-                        <div>
-                          <v-img
-                            class="align-end text-white"
-                            :src="item.urls.small"
-                            :lazy-src="item.urls.small"
-                            height="300"
-                            cover
-                            @click="openPhotoDialog(item.id)"
-                          >
-                            <template v-slot:placeholder>
-                              <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                              >
-                                <v-progress-circular
-                                  indeterminate
-                                  color="grey-lighten-5"
-                                ></v-progress-circular>
-                              </v-row>
-                            </template>
-                            <v-card-title class="card-title">
-                              <RouterLink
-                                class="text-white"
-                                :to="`/user/${item.user.username}`"
-                              >
-                                <v-avatar size="avatarSize" class="mr-2">
-                                  <img
-                                    :src="item.user.profile_image.small"
-                                    alt="alt"
-                                  />
-                                </v-avatar>
-                                {{ item.user.username }}
-                              </RouterLink>
-                            </v-card-title>
-                          </v-img>
-                        </div>
-
-                        <v-card-subtitle class="mt-5">
-                          <div>
-                            size: height:{{ item.height }} width:{{
-                              item.width
-                            }}
-                          </div>
-                        </v-card-subtitle>
-
-                        <v-card-text>
-                          {{ item.alt_description }}
-                        </v-card-text>
-
-                        <v-card-actions>
-                          <v-btn @click="toggleLike(item)">
-                            <v-icon
-                              v-if="item.liked_by_user"
-                              start
-                              color="pink"
-                              icon="mdi-heart"
-                              class="heartBeat"
-                            ></v-icon>
-                            <v-icon
-                              v-else
-                              start
-                              icon="mdi-heart-outline"
-                            ></v-icon>
-                            Like({{ item.likes }})
-                            <v-tooltip
-                              activator="parent"
-                              location="bottom"
-                              class=""
-                              :text="item.liked_by_user ? 'Liked' : 'Like'"
-                            ></v-tooltip>
-                          </v-btn>
-                          <v-spacer></v-spacer>
-                          <v-tooltip location="bottom" text="Download">
-                            <template v-slot:activator="{ props }">
-                              <v-btn
-                                v-bind="props"
-                                icon="mdi-download"
-                                @click="downloadPhoto(item)"
-                              >
-                              </v-btn>
-                            </template>
-                          </v-tooltip>
-                          <v-tooltip location="bottom" text="Add To Collection">
-                            <template v-slot:activator="{ props }">
-                              <v-btn v-bind="props" icon="mdi-plus"> </v-btn>
-                            </template>
-                          </v-tooltip>
-                        </v-card-actions>
-                      </v-card>
+                      <PhotoCard :photo="photo"></PhotoCard>
                     </v-col>
                   </v-row>
                   <v-btn
