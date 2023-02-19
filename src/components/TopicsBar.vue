@@ -26,7 +26,7 @@ initData();
           class="mr-2"
           pill
           link
-          :to="`/topic/${topic.slug}`"
+          :to="`/topic/${topic.id}`"
         >
           <v-avatar start>
             <v-img cover :src="topic.cover_photo.urls.thumb"></v-img>
@@ -37,9 +37,15 @@ initData();
       </v-hover>
     </template>
 
-    <!-- <RouterLink to="/" v-for="topic in topics" :key="topic.id">
-
-      </RouterLink> -->
+    <RouterLink
+      :to="{
+        name: 'unsplash-topic',
+        params: { id: topic.id },
+      }"
+      v-for="topic in topics"
+      :key="topic.id"
+      >{{ topic.title }}
+    </RouterLink>
   </v-sheet>
 </template>
 

@@ -72,7 +72,7 @@ const snackbar = reactive({
               variant="flat"
               block
               v-bind="props"
-              :to="`user/${user.username}`"
+              :to="`/user/${user.username}`"
             >
               Profile</v-btn
             >

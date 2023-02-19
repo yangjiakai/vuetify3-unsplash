@@ -87,7 +87,7 @@ const openDetailModal = () => {
           </div>
           <v-spacer />
           <div class="card-bottom">
-            <router-link :to="`user/${photo.user.username}`">
+            <router-link :to="`/user/${photo.user.username}`">
               <v-avatar class="avatar">
                 <v-img
                   :src="photo.user.profile_image.small"
@@ -96,7 +96,7 @@ const openDetailModal = () => {
                 />
               </v-avatar>
             </router-link>
-            <router-link class="username" :to="`user/${photo.user.username}`">
+            <router-link class="username" :to="`/user/${photo.user.username}`">
               {{ photo.user.username }}
             </router-link>
 

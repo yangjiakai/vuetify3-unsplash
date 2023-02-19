@@ -89,7 +89,7 @@ initData();
               class="mr-5"
               pill
               link
-              :to="`topic/${topic.slug}`"
+              :to="`/topic/${topic.id}`"
             >
               <v-avatar start>
                 <v-img cover :src="topic.cover_photo.urls.thumb"></v-img>

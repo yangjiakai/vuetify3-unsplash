@@ -14,12 +14,19 @@ import PhotoCard from "@/components/PhotoCard.vue";
 import TopicsBar from "@/components/TopicsBar.vue";
 
 const route = useRoute();
-
 const topics = ref<Topic[]>([]);
 const banner = ref<Topic>();
 const topicPhotos = ref<Photo[]>([]);
 const slug = ref<string | string[]>(route.params.slug);
 
+watch(
+  // watch for route changes
+  () => route.params.slug,
+  (newSlug) => {
+    slug.value = newSlug;
+    initData();
+  }
+);
 const initData = async () => {
   const topicsResponse = await getTopicsApi();
   topics.value = topicsResponse.data;

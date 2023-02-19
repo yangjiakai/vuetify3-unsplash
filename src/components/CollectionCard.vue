@@ -21,7 +21,7 @@ const snackbar = reactive({
 <template>
   <div class="">
     <v-card class="collection-card shadow-1">
-      <router-link :to="`collection/${collection.id}`">
+      <router-link :to="`/collection/${collection.id}`">
         <div class="card-top">
           <v-row no-gutters>
             <v-col cols="8">
@@ -57,7 +57,7 @@ const snackbar = reactive({
         </div>
       </router-link>
       <v-card-title>
-        <router-link :to="`collection/${collection.id}`">
+        <router-link :to="`/collection/${collection.id}`">
           <h4 class="font-weight-bold">
             {{ collection.title }}
           </h4>
@@ -67,7 +67,7 @@ const snackbar = reactive({
         <span> {{ collection.total_photos }} photos.</span>
         <span class="ml-2"
           >Curated by
-          <router-link :to="`user/${collection.user.username}`">
+          <router-link :to="`/user/${collection.user.username}`">
             <b>{{ collection.user.username }}</b>
           </router-link>
         </span>
