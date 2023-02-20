@@ -17,7 +17,12 @@
 
 ## 序文
 
-模仿 Unsplash 官网开发 的全平台图库 app，调用的全是 Unsplash 官方的接口
+模仿 Unsplash 官网开发 的全平台图库 app，调用了 Unsplash 官方的接口
+
+## Preview
+
+<img  src='/src/assets/preview.png'  alt='Vuetify3' />
+<img  src='/src/assets/preview2.png'  alt='Vuetify3' />
 
 ## 特性
 

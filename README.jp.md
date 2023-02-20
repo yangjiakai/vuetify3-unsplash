@@ -18,6 +18,11 @@
 
 Unsplash のウェブサイトを模倣したフルプラットフォームのギャラリーアプリを開発し、すべての API 呼び出しは公式の Unsplash API に行われています。
 
+## Preview
+
+<img  src='/src/assets/preview.png'  alt='Vuetify3' />
+<img  src='/src/assets/preview2.png'  alt='Vuetify3' />
+
 ## 特徴
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core)

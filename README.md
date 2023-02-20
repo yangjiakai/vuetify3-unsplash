@@ -18,6 +18,11 @@
 
 Developing a full-platform gallery app that imitates the Unsplash website, all API calls are made to the official Unsplash API.
 
+## Preview
+
+<img  src='/src/assets/preview.png'  alt='Vuetify3' />
+<img  src='/src/assets/preview2.png'  alt='Vuetify3' />
+
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core)
