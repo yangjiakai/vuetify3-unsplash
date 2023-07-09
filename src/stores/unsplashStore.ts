@@ -19,7 +19,7 @@ export const useUnsplashStore = defineStore({
   persist: {
     enabled: true,
     strategies: [
-      { storage: localStorage, paths: ["favoriteList", "searchResult"] },
+      { storage: localStorage, paths: ["favoriteList", "searchResult", "searchKey"] },
     ],
   },
 
