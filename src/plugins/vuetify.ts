@@ -50,16 +50,30 @@ export default createVuetify({
       dark: Darktheme,
     },
   },
+
   defaults: {
     VBtn: {
       rounded: "md",
-      flat: true,
       fontWeight: "400",
       letterSpacing: "0",
     },
-    VCard: {
-      flat: true,
+    VCard: {},
+    VSheet: {
       elevation: 1,
+    },
+    VTable: {
+      elevation: 1,
+    },
+
+    VDataTable: {
+      fixedHeader: true,
+      noDataText: "Results not found",
+    },
+    VTextField: {
+      variant: "solo",
+    },
+    VSelect: {
+      variant: "solo",
     },
   },
   locale: {

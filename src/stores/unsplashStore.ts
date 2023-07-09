@@ -53,5 +53,10 @@ export const useUnsplashStore = defineStore({
     clearRecentSearchList() {
       this.recentSearchList = [];
     },
+
+    updateSearchResult(payload: any) {
+      this.searchResult = payload;
+    },
+
   },
 });

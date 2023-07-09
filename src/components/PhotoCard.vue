@@ -60,7 +60,7 @@ const addToCollection = () => {
   <div class="">
     <v-card class="shadow-1">
       <v-img
-        :src="photo.urls.small"
+        :src="photo.urls?.small"
         height="400"
         cover
         aspect-ratio="1/2"

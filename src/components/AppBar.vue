@@ -16,16 +16,19 @@ const unsplashStore = useUnsplashStore();
       <Icon class="mx-3" width="30" icon="logos:bubble-icon" />
     </template> -->
 
-    <v-toolbar-title class="font-weight-bold ml-10">
-      <RouterLink to="/"> Unsplash </RouterLink>
+    <v-toolbar-title class="font-weight-bold">
+      <RouterLink to="/">
+        <img width="100" src="@/assets/logo.svg" />
+      </RouterLink>
     </v-toolbar-title>
     <template v-slot:append>
-      <v-btn
+      <SearchInput />
+      <!-- <v-btn
         icon="mdi-dots-vertical"
         @click="unsplashStore.showSideBar = !unsplashStore.showSideBar"
-      ></v-btn>
+      ></v-btn> -->
     </template>
-    <SearchInput />
+
     <v-spacer></v-spacer>
   </v-app-bar>
 </template>

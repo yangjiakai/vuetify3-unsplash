@@ -12,6 +12,7 @@ import {
 import type { Topic, Photo } from "@/types/unsplashTypes";
 import PhotoCard from "@/components/PhotoCard.vue";
 import TopicsBar from "@/components/TopicsBar.vue";
+import AppBar from "@/components/AppBar.vue";
 
 const route = useRoute();
 const topics = ref<Topic[]>([]);

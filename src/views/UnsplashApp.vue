@@ -8,6 +8,7 @@ import { getRandomPhotoApi, getPhotosApi } from "@/api/unsplashApi";
 import type { Topic, Photo } from "@/types/unsplashTypes";
 import PhotoCard from "@/components/PhotoCard.vue";
 import TopicsBar from "@/components/TopicsBar.vue";
+import AppBar from "@/components/AppBar.vue";
 
 const banner = ref<Photo>();
 const photos = ref<Photo[]>([]);
